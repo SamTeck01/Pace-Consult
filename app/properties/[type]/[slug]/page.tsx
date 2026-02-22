@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getPropertyBySlug } from "@/lib/properties";
 import PropertyGallery from "@/components/PropertyGallery";
 import ContactAgent from "@/components/ContactAgent";
@@ -144,15 +145,19 @@ export default async function PropertyDetailPage({ params }: PageProps) {
               <section id="house-plan">
                 <h2 className="text-lg font-semibold text-gray-900">House plan</h2>
                 {property.floor_plan_url ? (
-                  <div className="mt-2 aspect-video overflow-hidden rounded border border-gray-200 bg-gray-100">
-                    <img
+                  <div className="mt-2 overflow-hidden rounded border border-gray-200 bg-gray-100">
+                    <Image
                       src={property.floor_plan_url}
                       alt="Floor plan"
+                      width={1200}
+                      height={800}
                       className="h-full w-full object-contain"
                     />
                   </div>
                 ) : (
-                  <p className="mt-2 text-sm text-gray-500">Plot/site plan available on request.</p>
+                  <p className="mt-2 text-sm text-gray-500">
+                    Plot/site plan available on request.
+                  </p>
                 )}
               </section>
             )}
