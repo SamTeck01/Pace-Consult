@@ -1,0 +1,71 @@
+-- Optional seed data. Run after schema.sql in Supabase SQL Editor.
+-- Add your Supabase Storage image URLs to images array after uploading.
+
+insert into public.properties (
+  slug,
+  type,
+  transaction,
+  title,
+  description,
+  price_ngn,
+  location,
+  city,
+  state,
+  bedrooms,
+  bathrooms,
+  area_sqm,
+  plot_size_sqm,
+  images,
+  featured
+) values
+  (
+    'victoria-island-plot-1',
+    'land',
+    'buy',
+    'Prime plot at Victoria Island, Lagos',
+    'A choice plot in Victoria Island with good road access and clear title. Suitable for residential or commercial development. Fenced and secure.',
+    85000000,
+    'Victoria Island, Lagos',
+    'Lagos',
+    'Lagos',
+    null,
+    null,
+    null,
+    450,
+    '{}',
+    true
+  ),
+  (
+    'lekki-4bed-house',
+    'house',
+    'sell',
+    '4-bedroom duplex in Lekki Phase 1',
+    'Spacious 4-bedroom duplex with modern finishes. Living area, dining, and kitchen downstairs. All bedrooms ensuite. Quiet estate with 24hr security.',
+    120000000,
+    'Lekki Phase 1, Lagos',
+    'Lagos',
+    'Lagos',
+    4,
+    5,
+    350,
+    null,
+    '{}',
+    true
+  ),
+  (
+    'abuja-3bed-apartment',
+    'apartment',
+    'rent',
+    '3-bedroom apartment in Maitama, Abuja',
+    'Fully furnished 3-bedroom apartment in Maitama. Close to offices and amenities. Generator and water supply. Available for yearly rent.',
+    4500000,
+    'Maitama, Abuja',
+    'Abuja',
+    'FCT',
+    3,
+    3,
+    180,
+    null,
+    '{}',
+    true
+  );
