@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import PropertySearch from "@/components/PropertySearch";
 import FeaturedProperties from "@/components/FeaturedProperties";
 import SeeWhatWeOffer from "@/components/SeeWhatWeOffer";
+import WhyLandOwnership from "@/components/WhyLandOwnership";
 import SmartSelectionCta from "@/components/SmartSelectionCta";
 import { getFeaturedProperties } from "@/lib/properties";
 
@@ -14,6 +15,7 @@ export default async function HomePage() {
       <Suspense fallback={<div className="border-t border-gray-200 bg-gray-50 py-10" />}>
         <PropertySearch />
       </Suspense>
+      <WhyLandOwnership />
       <FeaturedProperties properties={featured} />
       <SeeWhatWeOffer />
       <SmartSelectionCta />
