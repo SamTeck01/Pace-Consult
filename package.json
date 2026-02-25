@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/dancing-script": "^5.2.8",
+    "@fontsource/montserrat": "^5.2.8",
     "@hugeicons/core-free-icons": "^1.0.0",
     "@hugeicons/react": "^1.0.0",
     "@supabase/ssr": "^0.5.2",

@@ -1,64 +1,57 @@
 "use client";
 
-import { useState } from "react";
+
 import { HugeiconsIcon } from "@hugeicons/react";
 import { CallIcon } from "@hugeicons/core-free-icons";
 
-interface ContactAgentProps {
-  agencyName?: string | null;
-  contactPhone?: string | null;
-  contactWhatsapp?: string | null;
-}
-
-export default function ContactAgent({
-  agencyName,
-  contactPhone,
-  contactWhatsapp,
-}: ContactAgentProps) {
-  const [submitted, setSubmitted] = useState(false);
-
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setSubmitted(true);
-  }
-
+export default function ContactAgent() {
   return (
-    <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-      <p className="text-xs font-medium uppercase tracking-wide text-gray-500">
-        Estate agency
+    <div className="rounded-2xl border-2 border-pace-green/10 bg-white p-6 shadow-xl ring-1 ring-gray-900/5 relative overflow-hidden">
+      {/* Decorative Brand Accent */}
+      <div className="absolute top-0 right-0 w-24 h-24 bg-pace-orange/10 rounded-full blur-2xl -mr-10 -mt-10" />
+
+      <p className="text-xs font-bold uppercase tracking-widest text-pace-orange mb-1">
+        Direct Contact
       </p>
-      {agencyName && (
-        <p className="mt-1 font-medium text-gray-900">{agencyName}</p>
-      )}
-      <div className="mt-4 flex flex-col gap-2">
-        {contactWhatsapp && (
-          <a
-            href={`https://wa.me/${contactWhatsapp.replace(/\D/g, "")}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-green-700 hover:underline"
-          >
-            WhatsApp
-          </a>
-        )}
-        {contactPhone && (
-          <a
-            href={`tel:${contactPhone}`}
-            className="flex items-center gap-2 text-sm text-gray-700 hover:underline"
-          >
-            <HugeiconsIcon icon={CallIcon} size={18} color="currentColor" />
-            {contactPhone}
-          </a>
-        )}
-      </div>
-      <form onSubmit={handleSubmit} className="mt-4">
-        <button
-          type="submit"
-          className="w-full rounded bg-black px-4 py-2.5 text-sm font-medium text-white hover:bg-gray-800"
+
+      <p className="mt-1 font-bold text-gray-900 text-lg">Pace Consult</p>
+      <p className="text-sm text-gray-500 mt-1">We are here to help you own your dream property.</p>
+
+      <div className="mt-6 flex flex-col gap-3">
+        <a
+          href="https://wa.me/2348168781298"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-sm font-semibold text-pace-orange hover:text-orange-600 transition-colors"
         >
-          {submitted ? "Request sent" : "Contact Agent"}
-        </button>
-      </form>
+          Chat on WhatsApp
+        </a>
+        <a
+          href="tel:07034680780"
+          className="flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-pace-green transition-colors"
+        >
+          <HugeiconsIcon icon={CallIcon} size={18} color="currentColor" />
+          Call: 07034680780
+        </a>
+        <a
+          href="tel:08173676999"
+          className="flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-pace-green transition-colors"
+        >
+          <HugeiconsIcon icon={CallIcon} size={18} color="currentColor" />
+          Call: 08173676999
+        </a>
+      </div>
+
+      <div className="mt-6 relative z-10 flex flex-col gap-3">
+        <a
+          href="https://wa.me/2348168781298"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full inline-flex justify-center items-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold shadow-md transition-all bg-pace-green text-white hover:bg-green-800 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-pace-green focus:ring-offset-2"
+        >
+          Message Us Now
+        </a>
+      </div>
     </div>
   );
 }

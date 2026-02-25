@@ -1,8 +1,20 @@
 import type { Metadata } from "next";
+import { Montserrat, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { organizationJsonLd } from "@/lib/schema";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  variable: "--font-cursive",
+});
 
 export const metadata: Metadata = {
   title: "Pace Consult | Land, Homes & Apartments in Nigeria",
@@ -17,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col antialiased">
+      <body className={`${montserrat.variable} ${dancingScript.variable} font-sans min-h-screen flex flex-col antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -27,6 +39,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <FloatingWhatsApp />
       </body>
     </html>
   );

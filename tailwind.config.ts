@@ -7,7 +7,16 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'pace-green': '#066839',
+        'pace-orange': '#f79b20',
+      },
+      fontFamily: {
+        sans: ['"Montserrat"', 'sans-serif'],
+        cursive: ['"Dancing Script"', 'cursive'],
+      }
+    },
   },
   plugins: [],
 } satisfies Config;

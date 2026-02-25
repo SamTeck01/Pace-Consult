@@ -93,11 +93,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
               <p className="text-3xl font-bold text-gray-900">
                 {formatPrice(property.price_ngn)}
               </p>
-              <ContactAgent
-                agencyName={property.agency_name}
-                contactPhone={property.contact_phone}
-                contactWhatsapp={property.contact_whatsapp}
-              />
+              <ContactAgent />
               <nav className="rounded border border-gray-200 p-4" aria-label="Page sections">
                 <ul className="space-y-2">
                   {sections.map((s) => (
