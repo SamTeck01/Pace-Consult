@@ -9,11 +9,15 @@ import { organizationJsonLd } from "@/lib/schema";
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
+  display: "swap",
+  adjustFontFallback: false,
 });
 
 const dancingScript = Dancing_Script({
   subsets: ["latin"],
   variable: "--font-cursive",
+  display: "swap",
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
