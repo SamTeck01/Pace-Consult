@@ -52,11 +52,14 @@ export default function WhyLandOwnership() {
                             ))}
                         </div>
                     </div>
-                    <div className="relative aspect-square lg:aspect-auto h-full min-h-[400px] rounded-3xl overflow-hidden shadow-2xl bg-pace-green/5">
-                        <div className="absolute inset-0 flex items-center justify-center text-pace-green opacity-20 transform -rotate-12">
-                            <HugeiconsIcon icon={SecurityCheckIcon} size={200} />
-                        </div>
-                        <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/90 backdrop-blur-sm rounded-2xl border border-white shadow-xl">
+                    <div className="relative h-full min-h-[400px] rounded-3xl overflow-hidden shadow-2xl">
+                        <img
+                            src="/images/brand-graphic.png"
+                            alt="Pace Consult Land Ownership"
+                            className="absolute inset-0 h-full w-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                        <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/95 backdrop-blur-sm rounded-2xl border border-white shadow-xl">
                             <p className="text-pace-green font-bold text-lg mb-1">Guaranteed Allocation</p>
                             <p className="text-sm text-gray-600">Peace of mind is standard with every purchase at Pace Consult.</p>
                         </div>

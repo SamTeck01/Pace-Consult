@@ -21,7 +21,7 @@ interface PropertyCardProps {
 export default function PropertyCard({ property }: PropertyCardProps) {
   const imageUrl =
     property.images?.[0] ||
-    "https://placehold.co/600x400/e5e7eb/6b7280?text=No+image";
+    "/images/brand-graphic.png";
   const detailUrl = `/properties/${property.type}/${property.slug}`;
 
   return (

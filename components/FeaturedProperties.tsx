@@ -11,7 +11,7 @@ export default function FeaturedProperties({ properties }: FeaturedPropertiesPro
     <section className="relative border-t border-gray-100 bg-white py-24">
       {/* Subtle Background Accent */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-pace-orange/5 rounded-full blur-3xl pointer-events-none" />
-      
+
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
           <div>
@@ -38,13 +38,21 @@ export default function FeaturedProperties({ properties }: FeaturedPropertiesPro
             ))}
           </div>
         ) : (
-          <div className="rounded-3xl border-2 border-dashed border-gray-100 bg-gray-50/50 p-16 text-center">
-            <p className="text-gray-500 text-lg">No featured listings found at the moment.</p>
+          <div className="relative overflow-hidden rounded-3xl border-2 border-dashed border-gray-100 bg-white p-12 text-center shadow-sm">
+            <div className="mx-auto mb-6 h-48 w-full max-w-md rounded-2xl overflow-hidden opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500">
+              <img
+                src="/images/brand-graphic.png"
+                alt="Coming Soon"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <p className="text-gray-600 text-lg font-medium">New listings are being verified.</p>
+            <p className="text-gray-400 text-sm mt-1">Check back soon for exclusive land and luxury opportunities.</p>
             <Link
-              href="/properties"
-              className="mt-6 inline-flex rounded-full bg-pace-green px-8 py-3 text-sm font-bold text-white shadow-md transition-all hover:bg-green-800 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-pace-green focus:ring-offset-2"
+              href="/contact"
+              className="mt-8 inline-flex rounded-full bg-pace-green/10 px-8 py-3 text-sm font-bold text-pace-green hover:bg-pace-green hover:text-white transition-all"
             >
-              Browse All Properties
+              Get Notified First &rarr;
             </Link>
           </div>
         )}

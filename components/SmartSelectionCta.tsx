@@ -40,10 +40,18 @@ export default function SmartSelectionCta() {
               </Link>
             </div>
           </div>
-          <div className="relative mt-16 h-80 lg:mt-8">
-            {/* Decorative element or just leave space for aesthetics */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border-2 border-white/10 rounded-full scale-110" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border-2 border-pace-orange/20 rounded-full scale-125" />
+          <div className="relative mt-16 h-80 lg:mt-8 flex items-center justify-center">
+            <div className="relative h-full w-full max-w-sm rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] ring-4 ring-white/10 group">
+              <img
+                src="/images/hero-reloaded.png"
+                alt="Modern Property"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-pace-green/40 to-transparent" />
+            </div>
+            {/* Visual Accents */}
+            <div className="absolute -top-4 -right-4 h-24 w-24 rounded-full bg-pace-orange/20 blur-2xl animate-pulse" />
+            <div className="absolute -bottom-4 -left-4 h-24 w-24 rounded-full bg-white/10 blur-2xl" />
           </div>
         </div>
       </div>

@@ -49,74 +49,76 @@ export default function PropertySearch() {
   }
 
   return (
-    <section id="search" className="border-t border-gray-200 bg-gray-50 py-10">
+    <section id="search" className="relative -mt-12 z-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-sm font-medium text-gray-700">
-          We help you find the home that will be yours
-        </p>
-        <form
-          onSubmit={handleSubmit}
-          className="mt-6 flex flex-wrap items-end justify-center gap-4"
-        >
-          <div>
-            <label htmlFor="type" className="sr-only">
-              Type
-            </label>
-            <select
-              id="type"
-              value={type}
-              onChange={(e) => setType(e.target.value)}
-              className="block w-full min-w-[140px] rounded border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-black focus:outline-none focus:ring-1 focus:ring-black"
-            >
-              {PROPERTY_TYPES.map((opt) => (
-                <option key={opt.value || "any"} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label htmlFor="city" className="sr-only">
-              City
-            </label>
-            <select
-              id="city"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              className="block w-full min-w-[140px] rounded border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-black focus:outline-none focus:ring-1 focus:ring-black"
-            >
-              {CITIES.map((opt) => (
-                <option key={opt.value || "any"} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label htmlFor="bedrooms" className="sr-only">
-              Bedrooms
-            </label>
-            <select
-              id="bedrooms"
-              value={bedrooms}
-              onChange={(e) => setBedrooms(e.target.value)}
-              className="block w-full min-w-[100px] rounded border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-black focus:outline-none focus:ring-1 focus:ring-black"
-            >
-              {BEDROOMS.map((opt) => (
-                <option key={opt.value || "any"} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </select>
-          </div>
-          <button
-            type="submit"
-            className="flex items-center gap-2 rounded bg-black px-5 py-2.5 text-sm font-medium text-white hover:bg-gray-800"
+        <div className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100 ring-1 ring-gray-900/5">
+          <p className="text-center text-sm font-bold uppercase tracking-widest text-pace-orange mb-6">
+            Find Your Future Today
+          </p>
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-wrap items-end justify-center gap-6"
           >
-            <HugeiconsIcon icon={SearchIcon} size={18} color="white" />
-            Search
-          </button>
-        </form>
+            <div className="flex-1 min-w-[200px]">
+              <label htmlFor="type" className="block text-xs font-bold text-gray-500 uppercase mb-2 ml-1">
+                Property Type
+              </label>
+              <select
+                id="type"
+                value={type}
+                onChange={(e) => setType(e.target.value)}
+                className="block w-full rounded-2xl border border-gray-200 bg-gray-50/50 px-4 py-3.5 text-sm text-gray-900 focus:border-pace-green focus:outline-none focus:ring-2 focus:ring-pace-green/20 transition-all"
+              >
+                {PROPERTY_TYPES.map((opt) => (
+                  <option key={opt.value || "any"} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="flex-1 min-w-[200px]">
+              <label htmlFor="city" className="block text-xs font-bold text-gray-500 uppercase mb-2 ml-1">
+                Location
+              </label>
+              <select
+                id="city"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+                className="block w-full rounded-2xl border border-gray-200 bg-gray-50/50 px-4 py-3.5 text-sm text-gray-900 focus:border-pace-green focus:outline-none focus:ring-2 focus:ring-pace-green/20 transition-all"
+              >
+                {CITIES.map((opt) => (
+                  <option key={opt.value || "any"} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="flex-1 min-w-[150px]">
+              <label htmlFor="bedrooms" className="block text-xs font-bold text-gray-500 uppercase mb-2 ml-1">
+                Bedrooms
+              </label>
+              <select
+                id="bedrooms"
+                value={bedrooms}
+                onChange={(e) => setBedrooms(e.target.value)}
+                className="block w-full rounded-2xl border border-gray-200 bg-gray-50/50 px-4 py-3.5 text-sm text-gray-900 focus:border-pace-green focus:outline-none focus:ring-2 focus:ring-pace-green/20 transition-all"
+              >
+                {BEDROOMS.map((opt) => (
+                  <option key={opt.value || "any"} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <button
+              type="submit"
+              className="flex items-center justify-center gap-2 rounded-full bg-pace-green px-10 py-4 text-sm font-bold text-white shadow-lg transition-all hover:bg-green-800 hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-pace-green focus:ring-offset-2 min-w-[160px]"
+            >
+              <HugeiconsIcon icon={SearchIcon} size={20} color="white" />
+              Search
+            </button>
+          </form>
+        </div>
       </div>
     </section>
   );
